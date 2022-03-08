@@ -34,7 +34,7 @@ uvicorn src.server:app --reload --reload-dir=src
 ```
 ---
 
-#### Neste projeto, é necessário autenticar o usuário para poder acessar o endpoint '/'. Caso queira remover a autenticação, refatore o código do arquivo src/server.py
+#### Neste projeto, é necessário autenticar o usuário para poder acessar o endpoint '/'. Caso queira remover a autenticação, refatore o código do endpoint '/' no  arquivo src/server.py
 Ao remover a autenticação. Os testes para validar o token irão parar de funcionar
 ```
 @app.get('/')
