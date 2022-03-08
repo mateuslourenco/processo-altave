@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -5,4 +7,5 @@ app = FastAPI()
 
 @app.get('/')
 def home():
-    return {'msg': 'ALTAVE'}
+    horario = datetime.now().strftime('%H:%M:%S')
+    return {'msg': horario}
