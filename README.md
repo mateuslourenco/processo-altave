@@ -34,7 +34,7 @@ uvicorn src.server:app --reload --reload-dir=src
 ```
 ---
 
-#### Neste projeto, é necessário autenticar o usuário para poder acessar o endpoint '/'. Caso queria remover a autenticação, refatore o código do arquivo src/server.py
+#### Neste projeto, é necessário autenticar o usuário para poder acessar o endpoint '/'. Caso queira remover a autenticação, refatore o código do arquivo src/server.py
 Ao remover a autenticação. Os testes para validar o token irão parar de funcionar
 ```
 @app.get('/')
@@ -47,6 +47,7 @@ def home(request: Request):
 
 #### Como testar o projeto pelo OpenAPI
 
+- Acesse a url http://127.0.0.1:8000/docs
 
 ![Tela inicial](img/tela_inicial.png)
 
@@ -68,7 +69,7 @@ source .venv/bin/activate
 flake8
 ```
 
-## Como rodar testes automaticos
+#### Como rodar testes automaticos
 ```
 source .venv/bin/activate
 pytest
