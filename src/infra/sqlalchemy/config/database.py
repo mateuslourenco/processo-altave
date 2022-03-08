@@ -1,10 +1,11 @@
 import os
 
+from decouple import config
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-db_url = os.environ.get('DATABASE_URL', 'sqlite:///./altave.db')
+db_url = config('DATABASE_URL', default='sqlite:///./altave.db')
 
 
 if db_url.startswith("postgres://"):

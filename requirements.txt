@@ -51,6 +51,8 @@ orjson==3.6.7
     # via fastapi
 passlib[bcrypt]==1.7.4
     # via -r requirements.in
+psycopg2-binary[all]==2.9.3
+    # via -r requirements.in
 pyasn1==0.4.8
     # via
     #   python-jose
@@ -59,14 +61,14 @@ pycparser==2.21
     # via cffi
 pydantic==1.9.0
     # via fastapi
+python-decouple==3.6
+    # via -r requirements.in
 python-dotenv==0.19.2
     # via uvicorn
 python-jose[cryptography]==3.3.0
     # via -r requirements.in
 python-multipart==0.0.5
-    # via
-    #   -r requirements.in
-    #   fastapi
+    # via fastapi
 pyyaml==5.4.1
     # via
     #   fastapi
