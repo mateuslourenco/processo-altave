@@ -1,6 +1,6 @@
 # processo-altave
 
-## Como rodar o projero
+## Como rodar o projeto
 
 - Clone esse repositorio
 - Instale o pip-tools
@@ -21,4 +21,10 @@ pip-sync requirements.txt
 ```
 source .venv/bin/activate
 flake8
+```
+
+## Como rodar testes automaticos
+```
+source .venv/bin/activate
+pytest
 ```
