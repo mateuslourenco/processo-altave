@@ -1,7 +1,9 @@
 from sqlalchemy import Column, Integer, String
 
+from src.infra.sqlalchemy.config.database import Base
 
-class Usuario:
+
+class Usuario(Base):
     __tablename__ = 'usuario'
 
     id = Column(Integer, primary_key=True, index=True)
