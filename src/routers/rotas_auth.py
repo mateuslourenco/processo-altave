@@ -13,6 +13,12 @@ router = APIRouter()
 
 @router.post('/signup/', status_code=status.HTTP_201_CREATED, response_model=schemas.UsuarioSimples)
 def signup(usuario: schemas.Usuario, session: Session = Depends(get_db)):
+
+    """
+    Endpoint que cria um usuario. Antes de criar o usuário no banco de dados, é verificado se não existe usuario com
+    o mesmo login
+    """
+
     usuario_localizado = RepositorioUsuario(session).obter_usuario(usuario.login)
     if usuario_localizado:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail='Já existe um usuario com esse login')
@@ -23,8 +29,11 @@ def signup(usuario: schemas.Usuario, session: Session = Depends(get_db)):
 
 
 @router.post('/token')
-def signin(session: Session = Depends(get_db),
-           form_data: OAuth2PasswordRequestForm = Depends()):
+def signin(session: Session = Depends(get_db), form_data: OAuth2PasswordRequestForm = Depends()):
+
+    """
+    Endpoint que faz a autenticação do usuario e retorna o token de acesso
+    """
 
     dados_invalidos = HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail='Usuario ou senha incorretos')
 

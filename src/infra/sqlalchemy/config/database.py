@@ -7,9 +7,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+# Utilizado python-decouple para extrair vairavel de ambiente DATABASE_URL
 db_url = config('DATABASE_URL', default='sqlite:///./altave.db')
 
 
+# Atualizado db_url para ser compativel com sqlaqlchemy
 if db_url.startswith("postgres://"):
     db_url = db_url.replace("postgres://", "postgresql://", 1)
 

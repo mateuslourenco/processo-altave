@@ -19,14 +19,6 @@ class UsuarioSimples(BaseModel):
         orm_mode = True
 
 
-class LoginData(BaseModel):
-    login: str
-    senha: str
-
-    class Config:
-        orm_mode = True
-
-
 class LoginSucesso(BaseModel):
     usuario: UsuarioSimples
     token: str
