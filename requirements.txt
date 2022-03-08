@@ -20,6 +20,8 @@ email-validator==1.1.3
     # via fastapi
 fastapi[all]==0.75.0
     # via -r requirements.in
+greenlet==1.1.2
+    # via sqlalchemy
 h11==0.13.0
     # via uvicorn
 httptools==0.2.0
@@ -53,6 +55,8 @@ six==1.16.0
     # via python-multipart
 sniffio==1.2.0
     # via anyio
+sqlalchemy[all]==1.4.32
+    # via -r requirements.in
 starlette==0.17.1
     # via fastapi
 typing-extensions==4.1.1
