@@ -31,6 +31,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install pip-tools
         pip-sync requirements.txt dev-requirements.txt
+    - name: Copy env-sample to .env
+      run: |
+        cp contrib/env-sample .env
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
