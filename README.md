@@ -4,6 +4,9 @@
 
 Projeto disponivel em [https://teste-altave.herokuapp.com/](https://teste-altave.herokuapp.com/)
 
+## Especificação OpenAPI
+https://teste-altave.herokuapp.com/docs
+
 ## Como rodar o projeto
 
 - Clone esse repositorio
@@ -26,6 +29,15 @@ pip-sync requirements.txt dev-requirements.txt
 cp contrib/env-sample .env
 docker-compose up
 uvicorn src.server:app --reload --reload-dir=src
+```
+
+### Neste projeto, é necessário autenticar o usuário para poder acessar o endpoint '/'. Caso queria remover a autenticação, refatore o código do arquivo src/server.py
+
+```
+@app.get('/')
+def home(request: Request):
+    return {'horário_requisição': request.state.horario_requisicao}
+
 ```
 
 
