@@ -1,4 +1,6 @@
-# processo-altave
+# Teste ALTAVE
+
+[![Python application](https://github.com/mateuslourenco/processo-altave/actions/workflows/ci.yml/badge.svg)](https://github.com/mateuslourenco/processo-altave/actions/workflows/ci.yml)
 
 ## Como rodar o projeto
 
