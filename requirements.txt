@@ -8,8 +8,12 @@ anyio==3.5.0
     # via starlette
 asgiref==3.5.0
     # via uvicorn
+bcrypt==3.2.0
+    # via passlib
 certifi==2021.10.8
     # via requests
+cffi==1.15.0
+    # via bcrypt
 charset-normalizer==2.0.12
     # via requests
 click==8.0.4
@@ -39,6 +43,10 @@ markupsafe==2.1.0
     # via jinja2
 orjson==3.6.7
     # via fastapi
+passlib[bcrypt]==1.7.4
+    # via -r requirements.in
+pycparser==2.21
+    # via cffi
 pydantic==1.9.0
     # via fastapi
 python-dotenv==0.19.2
@@ -52,7 +60,9 @@ pyyaml==5.4.1
 requests==2.27.1
     # via fastapi
 six==1.16.0
-    # via python-multipart
+    # via
+    #   bcrypt
+    #   python-multipart
 sniffio==1.2.0
     # via anyio
 sqlalchemy[all]==1.4.32

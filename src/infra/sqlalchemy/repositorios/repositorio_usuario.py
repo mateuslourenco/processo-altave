@@ -10,7 +10,7 @@ class RepositorioUsuario:
     def __init__(self, session: Session):
         self.session = session
 
-    def criar(self, usuario: schemas.Usuario):
+    def criar_usuario(self, usuario: schemas.Usuario):
         db_usuario = models.Usuario(login=usuario.login,
                                     senha=usuario.senha
                                     )
