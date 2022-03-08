@@ -11,14 +11,14 @@ class RepositorioUsuario:
         self.session = session
 
     def criar_usuario(self, usuario: schemas.Usuario):
-        db_usuario = models.Usuario(login=usuario.login,
-                                    senha=usuario.senha
-                                    )
+        db_usuario = models.User(login=usuario.login,
+                                 senha=usuario.senha
+                                 )
         self.session.add(db_usuario)
         self.session.commit()
         self.session.refresh(db_usuario)
         return db_usuario
 
     def obter_usuario(self, login):
-        query = select(models.Usuario).where(models.Usuario.login == login)
+        query = select(models.User).where(models.User.login == login)
         return self.session.execute(query).scalars().first()

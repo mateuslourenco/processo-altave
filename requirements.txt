@@ -13,13 +13,19 @@ bcrypt==3.2.0
 certifi==2021.10.8
     # via requests
 cffi==1.15.0
-    # via bcrypt
+    # via
+    #   bcrypt
+    #   cryptography
 charset-normalizer==2.0.12
     # via requests
 click==8.0.4
     # via uvicorn
+cryptography==36.0.1
+    # via python-jose
 dnspython==2.2.1
     # via email-validator
+ecdsa==0.17.0
+    # via python-jose
 email-validator==1.1.3
     # via fastapi
 fastapi[all]==0.75.0
@@ -45,23 +51,34 @@ orjson==3.6.7
     # via fastapi
 passlib[bcrypt]==1.7.4
     # via -r requirements.in
+pyasn1==0.4.8
+    # via
+    #   python-jose
+    #   rsa
 pycparser==2.21
     # via cffi
 pydantic==1.9.0
     # via fastapi
 python-dotenv==0.19.2
     # via uvicorn
+python-jose[cryptography]==3.3.0
+    # via -r requirements.in
 python-multipart==0.0.5
-    # via fastapi
+    # via
+    #   -r requirements.in
+    #   fastapi
 pyyaml==5.4.1
     # via
     #   fastapi
     #   uvicorn
 requests==2.27.1
     # via fastapi
+rsa==4.8
+    # via python-jose
 six==1.16.0
     # via
     #   bcrypt
+    #   ecdsa
     #   python-multipart
 sniffio==1.2.0
     # via anyio

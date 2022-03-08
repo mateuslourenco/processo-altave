@@ -7,5 +7,5 @@ def gerar_hash(texto):
     return pwd_context.hash(texto)
 
 
-def verificar_hash(texto, hash):
-    return pwd_context.verify(texto, hash)
+def verificar_hash(texto, texto_hash):
+    return pwd_context.verify(texto, texto_hash)
