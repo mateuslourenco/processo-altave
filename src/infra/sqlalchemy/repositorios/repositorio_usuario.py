@@ -7,6 +7,10 @@ from src.schemas import schemas
 
 class RepositorioUsuario:
 
+    """
+    Repositorio que faz a comunicacao com o bando de dados
+    """
+
     def __init__(self, session: Session):
         self.session = session
 

@@ -14,6 +14,11 @@ app = FastAPI()
 
 @app.middleware('http')
 async def horario_da_requisicao(request: Request, call_next):
+
+    """
+    middleware que recebe a requisicao e armezena o horario
+    """
+
     horario = datetime.now().strftime('%H:%M:%S')
     request.state.horario_requisicao = horario
     response = await call_next(request)

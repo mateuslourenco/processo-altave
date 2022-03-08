@@ -12,6 +12,11 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 
 def obter_usuario_logado(token: str = Depends(oauth2_scheme), session: Session = Depends(get_db)):
+
+    """
+    Funcao que valida se o token informado é um token valido
+    """
+
     token_invalido = HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Token inválido')
     try:
         login = token_provider.verificar_access_token(token)
