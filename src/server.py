@@ -6,7 +6,6 @@ from starlette.requests import Request
 from src.infra.sqlalchemy.config.database import criar_db
 from src.routers import rotas_auth
 from src.routers.utils import obter_usuario_logado
-from src.schemas import schemas
 
 criar_db()
 
@@ -24,5 +23,5 @@ app.include_router(rotas_auth.router)
 
 
 @app.get('/')
-def home(request: Request, token = Depends(obter_usuario_logado)):
+def home(request: Request, token=Depends(obter_usuario_logado)):
     return {'horário_requisição': request.state.horario_requisicao}
