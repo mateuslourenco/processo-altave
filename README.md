@@ -4,10 +4,12 @@
 
 Projeto disponivel em [https://teste-altave.herokuapp.com/](https://teste-altave.herokuapp.com/)
 
-## Especificação OpenAPI
+#### Especificação OpenAPI
 https://teste-altave.herokuapp.com/docs
 
-## Como rodar o projeto
+---
+
+#### Como rodar o projeto
 
 - Clone esse repositorio
 - Instale o pip-tools
@@ -30,9 +32,10 @@ cp contrib/env-sample .env
 docker-compose up
 uvicorn src.server:app --reload --reload-dir=src
 ```
+---
 
-### Neste projeto, é necessário autenticar o usuário para poder acessar o endpoint '/'. Caso queria remover a autenticação, refatore o código do arquivo src/server.py
-
+#### Neste projeto, é necessário autenticar o usuário para poder acessar o endpoint '/'. Caso queria remover a autenticação, refatore o código do arquivo src/server.py
+Ao remover a autenticação. Os testes para validar o token irão parar de funcionar
 ```
 @app.get('/')
 def home(request: Request):
@@ -40,8 +43,26 @@ def home(request: Request):
 
 ```
 
+---
 
-## Como testar qualidade do código
+#### Como testar o projeto pelo OpenAPI
+
+
+![Tela inicial](img/tela_inicial.png)
+
+---
+- Cadastre um usuário no endpoint /signup/
+![Tela inicial](img/signup-1.png)
+![Tela inicial](img/signup-2.png)
+
+- Após cadastrar o usuário, realize a autenticação
+![Tela autenticacao](img/autenticar-1.png)
+![Tela autenticacao](img/autenticar-2.png)
+
+#### Após realizar o cadastro e autenticação, teste o endpoint '/'
+![Tela autenticacao](img/requisicao_final.png)
+
+#### Como testar qualidade do código
 ```
 source .venv/bin/activate
 flake8
