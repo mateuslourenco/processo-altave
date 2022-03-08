@@ -3,3 +3,5 @@ uvicorn
 SQLAlchemy[all]
 passlib[bcrypt]
 python-jose[cryptography]
+python-decouple
+psycopg2-binary[all]
