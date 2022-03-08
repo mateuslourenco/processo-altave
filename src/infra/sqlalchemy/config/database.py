@@ -1,3 +1,7 @@
+"""
+Configuração do banco de dados conforme documentação do fast api
+https://fastapi.tiangolo.com/tutorial/sql-databases/
+"""
 from decouple import config
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
