@@ -15,3 +15,10 @@ python -m venv .venv
 source .venv/bin/activate
 pip-sync requirements.txt 
 ```
+
+
+## Como testar qualidade do código
+```
+source .venv/bin/activate
+flake8
+```
